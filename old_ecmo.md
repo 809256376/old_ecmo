@@ -203,3 +203,19 @@
   "visitDate": "2019-11-08",
   "birthday": "2019-11-08"
 }
+
+{
+	"answers": {
+		"111": {
+			"crfId": 1,
+			"paId": 3,
+			"queId": 111,
+			"answer": "333",
+			"status": 1
+		}
+	},
+	"crfId": 1,
+	"paId": 3,
+	"type": 2,
+	"userId": 1
+}
