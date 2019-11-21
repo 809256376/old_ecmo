@@ -278,7 +278,7 @@
 |info  |string | 成功或错误提示信息                  |
 
 ###### 接口示例
-> 创建地址：[http://localhost:9091/ecmo_admin/patient/search/1/10/]()
+> 地址：[http://localhost:9091/ecmo_admin/patient/search/1/10/]()
 ``` javascript
 // 请求体
 {
