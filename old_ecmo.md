@@ -13,7 +13,7 @@
 > POST /user/login/
 
 ###### 接口示例
-> 地址：[http://localhost:9091/ecmo_admin/user/login/]()
+> 地址：[http://localhost:9091/ecmo_admin/user/login/](http://localhost:9091/ecmo_admin/user/login/)
 ``` javascript
 // post请求体
 {
@@ -63,7 +63,7 @@
 |info  |string | 成功或错误提示信息                  |
 
 ###### 接口示例
-> 地址：[http://localhost:9091/ecmo_admin/user/save/]()
+> 地址：[http://localhost:9091/ecmo_admin/user/save/](http://localhost:9091/ecmo_admin/user/save/)
 ``` javascript
 // 请求体
 {
@@ -103,7 +103,7 @@
 |totalCount  |int | 总数                  |
 
 ###### 接口示例
-> 地址：[http://localhost:9091/ecmo_admin/user/list/-1/1/10/]()
+> 地址：[http://localhost:9091/ecmo_admin/user/list/-1/1/10/](http://localhost:9091/ecmo_admin/user/list/-1/1/10/)
 ``` javascript
 //返回结果:
 {
@@ -141,7 +141,7 @@
 |userId  |ture    |int|要删除的用户ID                          |
 
 ###### 接口示例
-> 地址：[http://localhost:9091/ecmo_admin/user/delete/111/]()
+> 地址：[http://localhost:9091/ecmo_admin/user/delete/111/](http://localhost:9091/ecmo_admin/user/delete/111/)
 ``` javascript
 //返回结果:
 {
@@ -160,7 +160,7 @@
 ###### URL
 > GET /user/get/{userId}/
 ###### 接口示例
-> 地址：[http://localhost:9091/ecmo_admin/user/get/1/]()
+> 地址：[http://localhost:9091/ecmo_admin/user/get/1/](http://localhost:9091/ecmo_admin/user/get/1/)
 ``` javascript
 //返回结果:
 {
@@ -186,7 +186,7 @@
 ###### URL
 > GET /user/reset/{userId}/
 ###### 接口示例
-> 地址：[http://localhost:9091/ecmo_admin/user/reset/1/]()
+> 地址：[http://localhost:9091/ecmo_admin/user/reset/1/](http://localhost:9091/ecmo_admin/user/reset/1/)
 ``` javascript
 //返回结果:
 {
@@ -228,8 +228,8 @@
 |info  |string | 成功或错误提示信息                  |
 
 ###### 接口示例
-> 创建地址：[http://localhost:9091/ecmo_admin/patient/create/1/]() \
- 修改地址：[http://localhost:9091/ecmo_admin/patient/modify/1/]()
+> 创建地址：[http://localhost:9091/ecmo_admin/patient/create/1/](http://localhost:9091/ecmo_admin/patient/create/1/) \
+ 修改地址：[http://localhost:9091/ecmo_admin/patient/modify/1/](http://localhost:9091/ecmo_admin/patient/modify/1/)
 ``` javascript
 // 请求体
 {
@@ -278,7 +278,7 @@
 |info  |string | 成功或错误提示信息                  |
 
 ###### 接口示例
-> 地址：[http://localhost:9091/ecmo_admin/patient/search/1/10/]()
+> 地址：[http://localhost:9091/ecmo_admin/patient/search/1/10/](http://localhost:9091/ecmo_admin/patient/search/1/10/)
 ``` javascript
 // 请求体
 {
@@ -335,7 +335,7 @@
 |paId  |ture    |int|要获取的病人ID                          |
 
 ###### 接口示例
-> 地址：[http://localhost:9091/ecmo_admin/patient/get/1/]()
+> 地址：[http://localhost:9091/ecmo_admin/patient/get/1/](http://localhost:9091/ecmo_admin/patient/get/1/)
 ``` javascript
 //返回结果:
 {
