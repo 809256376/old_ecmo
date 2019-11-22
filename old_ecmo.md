@@ -1,3 +1,4 @@
+[toc]
 
 # ecmo老数据库接口文档
 
@@ -13,7 +14,7 @@
 > POST /user/login/
 
 ###### 接口示例
-> 地址：[http://localhost:9091/ecmo_admin/user/login/](http://localhost:9091/ecmo_admin/user/login/)
+> 地址：[http://localhost:9091/ecmo_admin/user/login/]()
 ``` javascript
 // post请求体
 {
@@ -63,7 +64,7 @@
 |info  |string | 成功或错误提示信息                  |
 
 ###### 接口示例
-> 地址：[http://localhost:9091/ecmo_admin/user/save/](http://localhost:9091/ecmo_admin/user/save/)
+> 地址：[http://localhost:9091/ecmo_admin/user/save/]()
 ``` javascript
 // 请求体
 {
@@ -103,7 +104,7 @@
 |totalCount  |int | 总数                  |
 
 ###### 接口示例
-> 地址：[http://localhost:9091/ecmo_admin/user/list/-1/1/10/](http://localhost:9091/ecmo_admin/user/list/-1/1/10/)
+> 地址：[http://localhost:9091/ecmo_admin/user/list/-1/1/10/]()
 ``` javascript
 //返回结果:
 {
@@ -141,7 +142,7 @@
 |userId  |ture    |int|要删除的用户ID                          |
 
 ###### 接口示例
-> 地址：[http://localhost:9091/ecmo_admin/user/delete/111/](http://localhost:9091/ecmo_admin/user/delete/111/)
+> 地址：[http://localhost:9091/ecmo_admin/user/delete/111/]()
 ``` javascript
 //返回结果:
 {
@@ -160,7 +161,7 @@
 ###### URL
 > GET /user/get/{userId}/
 ###### 接口示例
-> 地址：[http://localhost:9091/ecmo_admin/user/get/1/](http://localhost:9091/ecmo_admin/user/get/1/)
+> 地址：[http://localhost:9091/ecmo_admin/user/get/1/]()
 ``` javascript
 //返回结果:
 {
@@ -186,7 +187,7 @@
 ###### URL
 > GET /user/reset/{userId}/
 ###### 接口示例
-> 地址：[http://localhost:9091/ecmo_admin/user/reset/1/](http://localhost:9091/ecmo_admin/user/reset/1/)
+> 地址：[http://localhost:9091/ecmo_admin/user/reset/1/]()
 ``` javascript
 //返回结果:
 {
@@ -228,8 +229,8 @@
 |info  |string | 成功或错误提示信息                  |
 
 ###### 接口示例
-> 创建地址：[http://localhost:9091/ecmo_admin/patient/create/1/](http://localhost:9091/ecmo_admin/patient/create/1/) \
- 修改地址：[http://localhost:9091/ecmo_admin/patient/modify/1/](http://localhost:9091/ecmo_admin/patient/modify/1/)
+> 创建地址：[http://localhost:9091/ecmo_admin/patient/create/1/]() \
+ 修改地址：[http://localhost:9091/ecmo_admin/patient/modify/1/]()
 ``` javascript
 // 请求体
 {
@@ -278,7 +279,7 @@
 |info  |string | 成功或错误提示信息                  |
 
 ###### 接口示例
-> 地址：[http://localhost:9091/ecmo_admin/patient/search/1/10/](http://localhost:9091/ecmo_admin/patient/search/1/10/)
+> 创建地址：[http://localhost:9091/ecmo_admin/patient/search/1/10/]()
 ``` javascript
 // 请求体
 {
@@ -335,7 +336,7 @@
 |paId  |ture    |int|要获取的病人ID                          |
 
 ###### 接口示例
-> 地址：[http://localhost:9091/ecmo_admin/patient/get/1/](http://localhost:9091/ecmo_admin/patient/get/1/)
+> 地址：[http://localhost:9091/ecmo_admin/patient/get/1/]()
 ``` javascript
 //返回结果:
 {
@@ -358,6 +359,124 @@
   "info": "success"
 }
 ```
+
+## 3\. 表单相关接口
+
+---
+
+
+#### **3\.1\. 获取表单列表**
+###### 接口功能
+> 获取所有表单类型的列表
+
+###### URL
+> GET /crf/getCrfList/
+
+###### 返回字段
+|返回字段|字段类型|说明                              |
+|:-----   |:------|:-----------------------------   |
+|data   |array    |类型列表 |
+|id   |int    |表单ID |
+|name   |String    |表单中文名 |
+|enName   |String    |表单英文名 |
+|status   |int    |返回结果状态。200：正常；-1：错误。   |
+|info  |string | 成功或错误提示信息                  |
+
+###### 接口示例
+> 创建地址：[http://localhost:9091/ecmo_admin/crf/getCrfList/](http://localhost:9091/ecmo_admin/crf/getCrfList/)
+``` javascript
+//返回结果:
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "入院情况与检查",
+      "enName": "crt_1",
+      "remark": null
+    },
+		...
+		...
+    {
+      "id": 12,
+      "name": "CRRT记录单",
+      "enName": "crt_12",
+      "remark": null
+    }
+  ],
+  "status": 200,
+  "info": "success",
+  "pageInfo": null
+}
+```
+
+#### **3\.2\. 查询病人表单状态及答案**
+###### 接口功能
+> 根据病人ID和表单ID获取病人对应表单的相关状态， 包括上传状态和答案列表
+
+###### URL
+> GET /crf/getPaStatus/{paId}/{crfId}/
+
+###### 请求参数
+
+|参数|必选|类型|说明|
+|:-----  |:-------|:-----|:-----|
+|paId |true    |int|病人ID|
+|crfId    |true    |int|表单ID|
+
+###### 返回字段
+|返回字段|字段类型|说明                              |
+|:-----   |:------|:-----------------------------   |
+|data=>status   |int    |当前表单提交状态， 0未提交，1已暂存，2已提交 |
+|data=>user   |string | 提交用户                  |
+|data=>patient   |object | 病人信息                  |
+|data=>answers   |array | 答案列表                  |
+|data=>crfStatus   |array | 所有表单状态(已暂存或已提交)                  |
+|status   |int    |返回结果状态。200：正常；-1：错误。   |
+|info  |string | 成功或错误提示信息                  |
+
+###### 接口示例
+> 地址：http://localhost:9091/ecmo_admin/crf/getPaStatus/1/1/
+``` javascript
+//返回结果:
+{
+  "data": {
+    "crfId": 1,
+    "status": 2,
+    "user": "name",
+    "patient": {
+      "id": 1,
+      "name": "张三",
+      "sex": 1,
+      "age": 0,
+      "birthday": "2019-11-08"
+    },
+    "answers": [
+      {
+        "id": 1,
+        "paId": 1,
+        "crfId": 1,
+        "queId": 111,
+        "answer": "421",
+        "ansTime": "2019-11-22 16:05:17",
+        "status": 1
+      }
+    ],
+    "crfStatus": [
+      {
+        "id": 1,
+        "paId": 1,
+        "crfId": 1,
+        "status": 2,
+        "updateUserId": 1,
+        "updateDate": "2019-11-22 16:05:17"
+      }
+    ]
+  },
+  "status": 200,
+  "info": "success"
+}
+```
+
 
 {
 	"answers": {
