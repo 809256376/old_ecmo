@@ -70,6 +70,7 @@
   "role": 0,
   "account": "string",
   "name": "name",
+  "sex":1,
   "phone": "13200000000",
   "email": "abc@126.com"
 }
